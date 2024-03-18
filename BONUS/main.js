@@ -75,11 +75,7 @@ for(let i =0; i < teamMembers.length; i++){
 
 
     // STAMPO NEL DOM LE SINGOLE PROPRIETA'
-    nameMembers.append(` Name: ${singleMember.name}`)
-    roleMembers.append(` Ruolo: ${singleMember.role}`)
-    picMembers.append(` Foto: ${singleMember.pic}`)
+    nameMembers.innerHTML += (` Name: ${singleMember.name}`)
+    roleMembers.innerHTML += (` Ruolo: ${singleMember.role}`)
+    picMembers.innerHTML += (` Foto: ${singleMember.pic}`)
 }
-
-
-
-
