@@ -73,10 +73,11 @@ for(let i =0; i < teamMembers.length; i++){
     console.log('Ruolo: ' + singleMember.role)
     console.log('Foto: ' + singleMember.pic)
 
+
+    // STAMPO NEL DOM LE SINGOLE PROPRIETA'
     nameMembers.append(` Name: ${singleMember.name}`)
     roleMembers.append(` Ruolo: ${singleMember.role}`)
     picMembers.append(` Foto: ${singleMember.pic}`)
-
 }
 
 
