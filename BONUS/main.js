@@ -57,12 +57,6 @@ const teamMembers = [
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM semplicemente come stringhe
 
-const nameMembers = document.querySelector('.name')
-
-const roleMembers = document.querySelector('.role')
-
-const picMembers = document.querySelector('.pic')
-
 for(let i =0; i < teamMembers.length; i++){
 
     //CREO UNA VARIABILE PER PRENDERE IL SINGOLO ELEMENTO DELL'ARRAY DI OGGETTI
@@ -74,8 +68,31 @@ for(let i =0; i < teamMembers.length; i++){
     console.log('Foto: ' + singleMember.pic)
 
 
-    // STAMPO NEL DOM LE SINGOLE PROPRIETA'
-    nameMembers.innerHTML += (` Name: ${singleMember.name}`)
-    roleMembers.innerHTML += (` Ruolo: ${singleMember.role}`)
-    picMembers.innerHTML += (` Foto: ${singleMember.pic}`)
+
+    // PRENDO DALL'HTML L'ELEMENTO row
+    const row = document.querySelector('.row')
+
+    // CREO UN ELEMENTO col DA APPENDERE ALL'ELEMENTO row
+    const col = document.createElement('div')
+
+    row.append(col)
+
+    // ASSEGNO ALLA COL LA CLASSE col-4
+    col.classList.add('col-4', 'p-3')
+
+
+    // CREO UN ELEMENTO CARD DA APPENDERE ALL'ELEMENTO COL
+    const card = document.createElement('div')
+    col.append(card)
+    // ASSEGNO LE CLASSI ALL'ELEMENTO CARD
+    card.classList.add('card', 'text-center')
+
+    
+    // AGGIUNGERE GLI ELEMENTI ALL CARD
+    card.innerHTML = `
+    <img src="../img/${singleMember.pic}" alt="...">
+    <h3 class="member_name"> ${singleMember.name}</h3>
+    <p class="member_role"> ${singleMember.role}</p>
+    `
+
 }

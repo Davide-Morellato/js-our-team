@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: beige;
+}
 
 .header_container{
     margin: 20px auto;
@@ -16,7 +19,14 @@
 }
 
 .description{
-    margin: 20px 400px;
     line-height: 1.7rem;
-    font-family: "Ribeye", serif;
+    font-family: "Exo 2", sans-serif;
+}
+
+main{
+    font-family: "Exo 2", sans-serif;
+}
+
+.member_name{
+    margin-top: 10px;
 }
