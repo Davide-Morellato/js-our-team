@@ -73,19 +73,13 @@ for(let i =0; i < teamMembers.length; i++){
     const row = document.querySelector('.row')
 
     // CREO UN ELEMENTO col DA APPENDERE ALL'ELEMENTO row
-    const col = document.createElement('div')
-
+    const col = domElement('div', ['col-4', 'p-3'])
     row.append(col)
-
-    // ASSEGNO ALLA COL LA CLASSE col-4
-    col.classList.add('col-4', 'p-3')
 
 
     // CREO UN ELEMENTO CARD DA APPENDERE ALL'ELEMENTO COL
-    const card = document.createElement('div')
+    const card = domElement('div',['card', 'text-center'])
     col.append(card)
-    // ASSEGNO LE CLASSI ALL'ELEMENTO CARD
-    card.classList.add('card', 'text-center')
 
     
     // AGGIUNGERE GLI ELEMENTI ALL CARD
@@ -94,5 +88,16 @@ for(let i =0; i < teamMembers.length; i++){
     <h3 class="member_name"> ${singleMember.name}</h3>
     <p class="member_role"> ${singleMember.role}</p>
     `
+}
 
+function domElement(tagName, classes){
+    const tag = document.createElement(tagName)
+
+    for(let i = 0; i < classes.length; i++){
+
+        tag.classList.add(classes[i])
+
+    }
+
+    return tag
 }
