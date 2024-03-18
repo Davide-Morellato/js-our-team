@@ -72,17 +72,19 @@ for(let i =0; i < teamMembers.length; i++){
     // PRENDO DALL'HTML L'ELEMENTO row
     const row = document.querySelector('.row')
 
-    // CREO UN ELEMENTO col DA APPENDERE ALL'ELEMENTO row
-    const col = domElement('div', ['col-4', 'p-3'])
+    // CREO UN ELEMENTO col DA APPENDERE ALL'ELEMENTO row (sfrutto la function domElement)
+    const col = domElement('div', ['col-4', 'p-3'])  // inserisco i parametri di riferimento
+                                                     // tagName 'div'
+                                                     // classes ['col-4', 'p-3'] (uso le parentesi quadre perchè mi sto riferendo a classes[i] della function)
     row.append(col)
 
 
-    // CREO UN ELEMENTO CARD DA APPENDERE ALL'ELEMENTO COL
+    // CREO UN ELEMENTO card DA APPENDERE ALL'ELEMENTO col
     const card = domElement('div',['card', 'text-center'])
     col.append(card)
 
     
-    // AGGIUNGERE GLI ELEMENTI ALL CARD
+    // AGGIUNGO GLI ELEMENTI ALLA card
     card.innerHTML = `
     <img src="../img/${singleMember.pic}" alt="...">
     <h3 class="member_name"> ${singleMember.name}</h3>
@@ -91,8 +93,11 @@ for(let i =0; i < teamMembers.length; i++){
 }
 
 function domElement(tagName, classes){
+
+    // CREO UNA VARIABILE tag PER CREARE UN ELEMENTO DEL DOM
     const tag = document.createElement(tagName)
 
+    // CREO UN CICLO for PER CREARE PIU' tag E ASSEGNARGLI LE CLASSI
     for(let i = 0; i < classes.length; i++){
 
         tag.classList.add(classes[i])
